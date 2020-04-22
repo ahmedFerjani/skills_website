@@ -1,0 +1,21 @@
+.bg {
+    /* The image used */ 
+    background-image: url("../../assets/wallhaven-zmd3po.jpg");
+    
+    /* Full height */
+    height: 100%;
+    width: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.jumbotron>h1 {
+    color: rgb(149, 248, 255) ; 
+}
+
+.jumbotron>p {
+    color: rgb(255, 255, 255) ; 
+}

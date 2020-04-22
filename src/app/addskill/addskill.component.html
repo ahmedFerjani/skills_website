@@ -1,0 +1,94 @@
+<div class="card backimg">
+    <!--     <img src="https://www.videotile.co.uk/wp-content/uploads/2017/10/why-elearning-can-help-you-discover-new-skills-01.png"
+        class="card-img-top" alt="Add new skill"> -->
+    <div class="card-body">
+        <h5 class="card-title text-center">Add new skill</h5>
+
+        <form>
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fname">Full name</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="First name" 
+                        id="fname" [(ngModel)]="data.fname" name="dataFname">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Last name" 
+                        [(ngModel)]="data.lname" name="dataLname">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email adress -->
+            <div class="form-group">
+                <label for="email">Contact Information</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" 
+                        [(ngModel)]="data.email" name="dataEmail" disabled>
+                        <small id="emailHelp" class="form-text text-muted" >We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="phonenumber" placeholder="Enter Phone Number" 
+                        [(ngModel)]="data.phone" name="dataPhone">
+                        <small id="phonelHelp" class="form-text text-muted">We'll never share your Phone Number with
+                            anyone
+                            else.</small>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- Adress -->
+            <div class="form-group">
+                <label for="adress">address</label>
+                <input type="text" class="form-control" id="adress" placeholder="Enter Adress" 
+                [(ngModel)]="data.adress" name="dataAdress">
+            </div>
+
+
+            <!-- Skill -->
+            <div class="form-group">
+                <label for="skill">Skill</label>
+                <input type="text" class="form-control" id="skill" placeholder="Enter your skill" 
+                [(ngModel)]="data.skill" name="dataSkill">
+            </div>
+
+
+            <!-- Price -->
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" placeholder="Enter the price of the skill" 
+                [(ngModel)]="data.price" name="dataPrice">
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea class="form-control" id="notes" rows="3" placeholder="Leave Notes Here ..." 
+                [(ngModel)]="data.notes" name="dataNotes"></textarea>
+                <small id="notesHelp" class="form-text text-muted">You can leave the input bellow empty if you don't
+                    have any note to share with us</small>
+            </div>
+
+            <!-- Confirm -->
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="confirm" name="confirm">
+                <label class="custom-control-label" for="confirm">Confirm</label>
+            </div>
+
+
+            <div class="text-center">
+
+                <button type="submit" class="btn btn-success btn-lg" id="submit" (click)="insertSkill()">Submit</button>
+                <button type="reset" class="btn btn-warning btn-lg" id="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+.backimg {
+        /* The image used */ 
+/*         background-image: url("https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+ */    
+
+    background-image: url("https://images.pexels.com/photos/304664/pexels-photo-304664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        /* Full height */
+        height: 100%;
+      
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+#reset {
+    margin-left: 30px;
+
+}

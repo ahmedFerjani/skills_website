@@ -1,0 +1,129 @@
+<div class="card backimg text-white bg-secondary mb-3 jumbotron-fluid">
+    <!--     <img src="https://www.videotile.co.uk/wp-content/uploads/2017/10/why-elearning-can-help-you-discover-new-skills-01.png"
+        class="card-img-top" alt="Add new skill"> -->
+    <div class="card-body">
+        <h5 class="card-title text-center">Create a New Account</h5>
+        <h6 class="card-subtitle text-center">It’s quick and easy.</h6>
+        <br>
+        <form>
+            
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fname">Full name</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="First name" 
+                        id="fname" name="fname" [(ngModel)]="fname">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Last name"
+                        name="lname" [(ngModel)]="lname">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email adress/Phone Number -->
+            <div class="form-group">
+                <label for="email">Mobile Number or/and Email</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                        name="email" [(ngModel)]="email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="phonenumber" placeholder="Enter Phone Number"
+                        name="phonenumber" [(ngModel)]="phonenumber">
+                        <small id="phonelHelp" class="form-text text-muted">We'll never share your Phone Number with
+                            anyone
+                            else.</small>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter Password"
+                name="password" [(ngModel)]="password">
+            </div>
+
+
+            <!-- Borthday -->
+            <div class="form-group">
+                <label for="birthday">Birthday</label>
+                <div class="row">
+                    <div class="col">
+                        <select class="custom-select custom-select mb-3" 
+                        [(ngModel)]="selectedMonth" name="month">
+                            <option selected>Month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select class="custom-select custom-select mb-3" 
+                        [(ngModel)]="selectedDay" name="day">
+                            <option selected>Day</option>
+                            <option [value]="day" *ngFor="let day of days"> {{day}}</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="year" name="year"
+                        placeholder="Year" [(ngModel)]="selectedYear">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Gender -->
+            <div class="form-group ">
+                <label>Gender</label>
+                <div class="row">
+                    <div class="col form-inline">
+                        <div class="custom-control custom-radio mb-3">
+                            <input type="radio" class="custom-control-input radio-inline" id="male" 
+                            name="gender" [(ngModel)]="gender" value="male">
+                            <label class="custom-control-label" for="male" >Male</label>
+                        </div>
+                        <div class="custom-control custom-radio mb-3 female">
+                            <input type="radio" class="custom-control-input radio-inline" id="female" name="gender"  value="female" [(ngModel)]="gender">
+                            <label class="custom-control-label" for="female">female</label>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <!-- Confirm -->
+            <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="confirm" name="confirm">
+                <label class="custom-control-label" for="confirm">Confirm</label>
+            </div>
+
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-success btn-lg" id="submit" 
+                (click)="onRegistre()">Submit</button>
+                <button type="reset" class="btn btn-warning btn-lg" id="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

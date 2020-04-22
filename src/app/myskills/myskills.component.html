@@ -1,0 +1,138 @@
+
+
+
+<div class="table-responsive">
+    <table class="table table-dark text-center">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Adress</th>
+                <th scope="col">Skill</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-primary" *ngFor="let item of itemArray; index as i">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ item.fname }}</td>
+                <td>{{ item.lname }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.phone }}</td>
+                <td>{{ item.adress }}</td>
+                <td>{{ item.skill }}</td>
+                <td>{{ item.price }}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="onEdit(item.$key, item.fname,
+                item.lname, item.email, item.phone, item.adress, item.skill,item.price)" data-toggle="modal"
+                        data-target="#exampleModalCenter">Edit</button>
+                    <button type="button" class="btn btn-danger marg_button"
+                        (click)="onDelete(item.$key)">Delete</button>
+                </td>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <form>
+                                    <!-- Full Name -->
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="First name"
+                                                    id="fname" name="fname" [(ngModel)]="data.fname">
+                                                <small id="fnameHelp" class="form-text text-muted">First
+                                                    Name</small>
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Last name"
+                                                    name="lname" [(ngModel)]="data.lname">
+                                                <small id="lnameHelp" class="form-text text-muted">Last Name</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email adress -->
+                                    <div class="form-group">
+                                        <label for="email">Contact Information</label>
+                                        <div class="row">
+                                            <div class="col">
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="Enter email" name="email" [(ngModel)]="data.email">
+                                                <small id="emailHelp" class="form-text text-muted">Email</small>
+
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" id="phonenumber"
+                                                    placeholder="Enter Phone Number" name="phone"
+                                                    [(ngModel)]="data.phone">
+                                                <small id="phoneHelp" class="form-text text-muted">Phone</small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Adress -->
+                                    <div class="form-group">
+                                        <label for="adress">address</label>
+                                        <input type="text" class="form-control" id="adress" placeholder="Enter Adress"
+                                            name="adress" [(ngModel)]="data.adress">
+                                        <small id="adressHelp" class="form-text text-muted">Phone</small>
+
+                                    </div>
+
+
+                                    <!-- Skill -->
+                                    <div class="form-group">
+                                        <label for="skill">Skill</label>
+                                        <input type="text" class="form-control" id="skill"
+                                            placeholder="Enter your skill" name="skill" [(ngModel)]="data.skill">
+                                        <small id="skillHelp" class="form-text text-muted">Skill</small>
+
+                                    </div>
+
+
+                                    <!-- Price -->
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="text" class="form-control" id="price"
+                                            placeholder="Enter the price of the skill" name="price"
+                                            [(ngModel)]="data.price">
+                                        <small id="skillpriceHelp" class="form-text text-muted">Skill Price</small>
+                                    </div>
+
+                                    <!-- Notes -->
+                                    <div class="form-group">
+                                        <label for="notes">Notes</label>
+                                        <textarea class="form-control" id="notes" rows="3"
+                                            placeholder="Leave Notes Here ..." name="notes"
+                                            [(ngModel)]="data.notes"></textarea>
+                                        <small id="notesHelp" class="form-text text-muted">Notes</small>
+
+                                    </div>
+
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                    id="dismiss">Close</button>
+                                <button type="button" class="btn btn-primary" (click)="onSave()">Save
+                                    changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+
+            </tr>
+        </tbody>
+    </table>
+</div>

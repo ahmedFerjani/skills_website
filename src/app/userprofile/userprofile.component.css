@@ -1,0 +1,20 @@
+.profimg {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto ; 
+}
+
+ .backimg {
+
+background-image: url("../../assets/background.jpg");
+    /* Full height */
+    height: 100%;
+    width: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} 
+

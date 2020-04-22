@@ -1,0 +1,105 @@
+<div class="backimg">
+    <br>
+    <div class="card" style="width: 18rem; margin: 0 auto; margin-top: 5%;">
+        <img src=".{{data.image}}" class="card-img-top profimg " alt="Profile picture" style=" margin-top:20px;">
+        <div class="text-center">
+                Upload Photo <input type="file" name="uploadedimg" 
+                id="uploadedimg" accept=".png,.jpg" (change)="upload($event)">
+
+        </div>
+        <div class="card-body text-center">
+            <h5 class="card-title">{{data.fname}} {{data.lname}}</h5>
+            <p class="card-text">{{data.notes}}</p>
+        </div>
+        <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item">Email : {{data.email}}</li>
+            <li class="list-group-item">Phone Number : {{data.phone}}</li>
+            <li class="list-group-item">fullName : {{data.fullName}}</li>
+            <li class="list-group-item">gender : {{data.gender}}</li>
+            <li class="list-group-item">phone : {{data.phone}}</li>
+        </ul>
+        <button data-target="#EditInfo" data-toggle="modal" class="btn btn-primary">
+            Update info
+        </button>
+
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="EditInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form>
+                            <!-- Full Name -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="First name" id="fullName"
+                                            name="fullName" [(ngModel)]="data.fullName">
+                                        <small id="fnameHelp" class="form-text text-muted">Full
+                                            Name</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email adress -->
+                            <div class="form-group">
+                                <label for="email">Contact Information</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                            name="email" [(ngModel)]="data.email" disabled>
+                                        <small id="emailHelp" class="form-text text-muted">Email</small>
+
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="phonenumber"
+                                            placeholder="Enter Phone Number" name="phone" [(ngModel)]="data.phone">
+                                        <small id="phoneHelp" class="form-text text-muted">Phone</small>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gender -->
+                            <div class="form-group ">
+                                <label>Gender</label>
+                                <div class="row">
+                                    <div class="col form-inline">
+                                        <div class="custom-control custom-radio mb-3">
+                                            <input type="radio" class="custom-control-input radio-inline" id="male"
+                                                name="gender" [(ngModel)]="data.gender" value="male">
+                                            <label class="custom-control-label" for="male">Male</label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-3 female">
+                                            <input type="radio" class="custom-control-input radio-inline" id="female"
+                                                name="gender" value="female" [(ngModel)]="data.gender">
+                                            <label class="custom-control-label" for="female">female</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="dismiss">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="onEdit()">Save
+                            changes</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+
+
+    </div>
+    <br>
+    <br>
+</div>
